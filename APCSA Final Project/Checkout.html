@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Sweet Craving" content="width=device-width, initial-scale=1.0" charset="UTF-8" />
+    <title>Sweet Craving Cookie Shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!--NAV bar-->
+    <header>
+      <nav class="nav-bar" style="background-color: white;">
+        <ul>
+          <li>
+            <form class="d-flex" role="search" onsubmit="return false;">
+              <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" oninput="performSearch()" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg>
+            </form>   
+          </li>
+          <li class="logo">
+            <a id="logo" href="index.html">
+              <img src="Cookie.png" width="auto" height="100px" alt="Sweet Craving Cookie Shop Logo" />
+            </a>
+          </li>
+          <li class="shopping-bag">
+            <a href="Checkoutmenu.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 1 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!--END-->
+
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+          <form action="/action_page.php">
+            <div class="row">
+              <div class="col-50">
+                <h3>Billing Address</h3>
+                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="john@example.com">
+                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                <label for="city"><i class="fa fa-institution"></i> City</label>
+                <input type="text" id="city" name="city" placeholder="New York">
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="NY">
+                  </div>
+                  <div class="col-50">
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" placeholder="10001">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-50">
+                <h3>Payment</h3>
+                <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <label for="cname">Name on Card</label>
+                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="expyear">Exp Year</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                  </div>
+                  <div class="col-50">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <label>
+              <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+            </label>
+            <input type="submit" value="Continue to checkout" class="btn">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-25">
+        <div class="container">
+          <!-- Total section -->
+          <p><a href="Checkout.html">Cookie</a> <span class="cookieCount">$0</span></p>
+          <p><a href="Checkout.html">Drink</a> <span class="drink">$0</span></p>
+          <hr>
+          <p>Total <span class="price" style="color:black"><b>$0</b></span></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS.js"></script>
+    <style>
+      .price {
+        list-style-type: none;
+        border: 1px solid #000;
+        margin: 0;
+        padding: 0;
+        width: calc(50% - 10px); /* Adjust width as needed */
+        box-sizing: border-box;
+        background-color: white;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .price:hover {
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .price .header {
+        background-color: #111;
+        color: white;
+        font-size: 25px;
+        padding: 10px;
+      }
+
+      .price li {
+        border-bottom: 1px solid #000;
+        padding: 20px;
+      }
+
+      .price .grey {
+        background-color: #eee;
+        font-size: 20px;
+      }
+
+      .price p {
+        margin-bottom: 10px; /* Add margin between paragraphs */
+      }
+
+      .price .price {
+        float: right; /* Align the price to the right */
+        color: black; /* Ensure price color is visible */
+        font-weight: bold; /* Make the price bold */
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col-75 {
+        flex: 75%;
+        padding: 20px;
+      }
+
+      .col-25 {
+        flex: 25%;
+        padding: 20px;
+      }
+
+      .container {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 3px;
+      }
+
+      input[type=text] {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      label {
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 17px;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+
+      a {
+        color: black;
+        size-adjust: 10px;
+      }
+
+      hr {
+        border: 1px solid #ccc;
+      }
+
+      span.price {
+        float: right;
+        color: grey;
+      }
+    </style>
+  </body>
+</html>

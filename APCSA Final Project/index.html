@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sweet Craving Cookie Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+  <style>
+    /* Add your CSS code here */
+    body {
+      zoom: 80%;
+      background: linear-gradient(to bottom, #f5e5a1, #f3dd94, #f7e289);
+
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAV bar-->
+  <header>
+    <nav class="nav-bar">
+      <ul>
+
+        <li>
+          <form action="https://www.google.com/search" method="get" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="30" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </form>
+        </li>
+
+        <li class="logo">
+          <a id="logo" href="index.html" onclick="">
+            <img src="Cookie.png" width="auto" height="100px" />
+          </a>
+        </li>
+
+
+        <li class="shopping-bag">
+          </b>
+          <a href="Checkoutmenu.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="25px" fill="currentColor" class="bi bi-bag"
+              viewBox="0 0 16 16" style="list-style-type: none;">
+              <path
+                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 1 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+            </svg>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+  <!--END-->
+
+  <!--Without the image slider it just a bunch of pictures, i might animate it -->
+  <br>
+  <section>
+    <div class="scroll-container">
+      <div class="cookie" id="mnmCookies">
+        <img src="mnmCookies.jpeg" alt="MnM Cookies">
+        <p>Our world class chocolate chip cookie, and MnM Cookies, are made with love, and served with love!</p>
+      </div>
+      <div class="cookie" id="mixedCookie">
+        <img src="mixedCookie.jpg" alt="Mixed Cookie">
+        <p>Our world class chocolate chip cookie, and MnM Cookies, are made with love, and served with love!</p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    body {
+      background-color: #E8D899;
+      margin: 0;
+      padding: 0;
+    }
+
+    .scroll-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+      margin: 150px;
+    }
+
+    .cookie {
+      width: 45%;
+      border: 3px solid black;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: white;
+      text-align: center;
+    }
+
+    .cookie img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .cookie p {
+      margin: 0;
+    }
+  </style>
+  <!--Amount sold-->
+  <br>
+  <section class="revpage">
+    <!--<img  src="Cookiesold(1).jpg" alt="revpage">-->
+    <div id="revpage-amt">
+      <div id="cookie">
+        <h1>Cookie Sold</h1>
+        <p><span id="cookieCount">0</span></p>
+      </div>
+      <div id="drink">
+        <h1>Drink Sold</h1>
+        <p><span id="drinkCount">0</span></p>
+      </div>
+      <div id="rev">
+        <h1>Revenue earned</h1>
+        <p><span id="total">$0</span></p>
+      </div>
+
+      <style>
+        #revpage-amt {
+          display: flex; /* Use flexbox */
+          flex-direction: row; /* Arrange items horizontally */
+          justify-content: space-between; /* Space items evenly */
+          align-items: center; /* Center items vertically */
+          text-shadow: 10%;
+          text-align: center;
+          border-color: transparent;
+          border: 5px solid white;
+          background: linear-gradient(to bottom, #f5e5a1, #f3dd94, #f7e289);
+          padding: 30px;
+          margin: 50px;
+        }
+        a {
+        color: black;
+        size-adjust: 10px;
+      }
+        #cookie {
+          flex: 1; /* Take up available space */
+        }
+      
+        #rev {
+          flex: 1; /* Take up available space */
+        }
+      
+        #drink {
+          flex: 1; /* Take up available space */
+        }
+      
+        .rev {
+          padding: 20px;
+        }
+      
+        .cookie {
+          text-align: left;
+        }
+      
+        .drink {
+          text-align: right;
+        }
+      </style>
+      
+    </div>
+  </section>
+  <footer class="foot">
+    <p>&copy; 2024 Sweet Craving Cookie. All rights reserved.</p>
+  </footer>
+  <script src="JS.js"></script>
+
+</body>
+
+</html>

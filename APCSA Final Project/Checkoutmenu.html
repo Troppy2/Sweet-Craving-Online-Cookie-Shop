@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweet Craving Cookie Shop - Delicious cookies and drinks">
+  <title>Sweet Craving Cookie Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="css.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Container for the columns */
+    .columns {
+      display: flex;
+      justify-content: space-between; /* Space the items apart */
+      gap: 20px; /* Add space between the items */
+      padding: 8px;
+    }
+
+    /* Styling for the price boxes */
+    .price {
+      list-style-type: none;
+      border: 1px solid #000;
+      margin: 0;
+      padding: 0;
+      width: 48%; /* Adjust width as needed */
+      box-sizing: border-box;
+      background-color: white;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .price:hover {
+      box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .price .header {
+      background-color: #111;
+      color: white;
+      font-size: 25px;
+      padding: 10px;
+    }
+
+    .price li {
+      border-bottom: 1px solid #000;
+      padding: 20px;
+    }
+
+    .price .grey {
+      background-color: #eee;
+      font-size: 20px;
+    }
+
+    .button {
+      background-color: #04AA6D;
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    a {
+        color: black;
+        size-adjust: 10px;
+      }
+    .add, .minus {
+      cursor: pointer;
+      font-size: 20px;
+      padding: 10px;
+      display: inline-block;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+   <!--NAV bar-->
+   <header>
+    <nav class="nav-bar" style="background-color: white;">
+      <ul>
+        <li>
+          <form class="d-flex" role="search" onsubmit="return false;">
+            <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" oninput="performSearch()" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </form>   
+        </li>
+        <li class="logo">
+          <a id="logo" href="index.html">
+            <img src="Cookie.png" width="auto" height="100px" alt="Sweet Craving Cookie Shop Logo" />
+          </a>
+        </li>
+        <li class="shopping-bag">
+          <a href="Checkoutmenu.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+              <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 1 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!--END-->
+
+  <div class="columns">
+    <ul class="price">
+      <li class="header">Drink</li>
+      <li class="grey">$1.50</li>
+      <li>
+        <span class="minus" onclick="minusDrink()">-</span>
+        <span id="drinkCount">0</span>
+        <span class="add" onclick="addDrink()">+</span>
+      </li>
+      <li class="grey">
+        <a href="Checkout.html" class="button" onclick="dPurchase()">Purchase</a>
+      </li>
+      <li class="abt-prod">
+        Our drinks perfectly complement our cookies, providing refreshing and delicious beverages that enhance your overall sweet craving experience.
+      </li>
+    </ul>
+    <ul class="price">
+      <li class="header">Cookie</li>
+      <li class="grey">$1</li>
+      <li>
+        <span class="minus" onclick="minusCookie()">-</span>
+        <span id="cookieCount">0</span>
+        <span class="add" onclick="addCookie()">+</span>
+      </li>
+      <li class="grey">
+        <a href="Checkout.html" class="button" onclick="cPurchase()">Purchase</a>
+      </li>
+      <li class="abt-prod">
+        Our Sweet Craving cookies are freshly baked daily, offering a delightful blend of rich flavors and perfect textures that make every bite irresistible.
+      </li>
+    </ul>
+  </div>
+  <script src="JS.js"></script>
+</body>
+</html>
